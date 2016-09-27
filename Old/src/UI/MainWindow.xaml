@@ -1,0 +1,32 @@
+﻿<Window x:Class="AutoBuyer.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="630">
+    <Grid>
+        <DockPanel>
+            <StackPanel Margin="5" DockPanel.Dock="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+                <TextBlock Padding="3">New item Id:</TextBlock>
+                <TextBox Text="{Binding Path=NewItemId}" Width="70" Padding="3" />
+                <TextBlock Padding="3" Margin="10 0 0 0">New item max price:</TextBlock>
+                <TextBox Text="{Binding Path=NewItemMaximumPrice}" Width="70" Padding="3" />
+                <TextBlock Padding="3" Margin="10 0 0 0">Number to buy:</TextBlock>
+                <TextBox Text="{Binding Path=NumberToBuy}" Width="70" Padding="3" />
+                <Button Command="{Binding Path=StartBuyingCommand}" Padding="3" Margin="15 0 0 0" Content="Start buying" />
+            </StackPanel>
+
+            <DataGrid ItemsSource="{Binding Path=Buyers}" IsReadOnly="True" AutoGenerateColumns="False"
+                      HorizontalGridLinesBrush="DarkGray" VerticalGridLinesBrush="DarkGray" SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ItemId" Binding="{Binding Path=ItemId}" />
+                    <DataGridTextColumn Header="CurrentPrice" Binding="{Binding Path=CurrentPrice}" />
+                    <DataGridTextColumn Header="NumberInStock" Binding="{Binding Path=NumberInStock}" />
+                    <DataGridTextColumn Header="BoughtSoFar" Binding="{Binding Path=BoughtSoFar}" />
+                    <DataGridTextColumn Header="State" Binding="{Binding Path=State}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+    </Grid>
+</Window>
