@@ -17,5 +17,5 @@ Licence
 [L1]: http://www.apache.org/licenses/LICENSE-2.0
 [L5]: Old
 [L6]: New
-[L2]: blob/master/New/src/DBCreationScript.sql
-[L3]: blob/master/New/src/Tests/Integration/Tests.cs
+[L2]: New/src/DBCreationScript.sql
+[L3]: master/New/src/Tests/Integration/Tests.cs
